@@ -87,6 +87,10 @@ namespace MyTrayApp
             {
                 if (user.name != null && toBeIndex != null)
                 {
+                    if (user.name.Contains("\\"))
+                    {
+                        user.name = user.name.Substring(user.name.LastIndexOf("\\"));
+                    }
                     int i = CheckToDos(user.name);
                     if (i != 0)
                     {
